@@ -12,7 +12,7 @@ export default function Schedule() {
     
     return (
         <div>
-            <p>Select your busy hours</p>
+            <p>Select your available hours</p>
             {availability.map((isAvailable, index) => <Timepicker key={index} hour={index} isAvailable={isAvailable} onToggle={() => toggle(index)}/>)}
         </div>
     );
