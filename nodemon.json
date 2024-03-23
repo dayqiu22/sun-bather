@@ -1,0 +1,6 @@
+{
+    "watch": ["/src/app"],
+    "ext": "js,jsx,ts,tsx,json",
+    "ignore": ["node_modules", ".next"],
+    "exec": "next dev"
+  }
