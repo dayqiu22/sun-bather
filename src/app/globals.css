@@ -1,13 +1,13 @@
 :root {
-    --main-bg-color: #B3E5FC
-    --main-font-color: #36454F
-    --secondary-bg-color: #FBCDAC
+    --main-bg-color: #B3E5FC;
+    --main-font-color: #36454F;
+    --secondary-bg-color: #FBCDAC;
 }
 
 .available {
-    background-color: var(--main-bg-color);
+    background-color: white;
 }
 
 .unavailable {
-    background-color: lightgray;
+    background-color: var(--main-bg-color);
 }
