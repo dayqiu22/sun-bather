@@ -1,4 +1,4 @@
-export default function Reco(props) {
+export default function Reco( props ) {
     return (
         <>
             <p>`Best Time: ${props.time}`</p>
