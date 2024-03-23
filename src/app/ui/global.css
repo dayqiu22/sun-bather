@@ -3,3 +3,11 @@
     --main-font-color: #36454F
     --secondary-bg-color: #FBCDAC
 }
+
+.available {
+    background-color: var(--main-bg-color);
+}
+
+.unavailable {
+    background-color: lightgray;
+}
