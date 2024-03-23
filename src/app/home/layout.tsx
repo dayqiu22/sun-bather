@@ -1,6 +1,5 @@
 'use client'
 
-import Box from "../ui/preferences/box";
 import Container from 'rsuite/Container';
 import Header from 'rsuite/Header';
 import Content from 'rsuite/Content';
@@ -16,8 +15,9 @@ import 'rsuite/Content/styles/index.css';
 import 'rsuite/Footer/styles/index.css';
 import 'rsuite/Sidebar/styles/index.css';
 
-export default function Page() {
-    return (
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <div>
         <div className="show-fake-browser navbar-page">
             <Container>
             <Header>
@@ -29,10 +29,11 @@ export default function Page() {
                 </Navbar>
             </Header>
             <Content>
-                <Box />
+                {children}
             </Content>
             <Footer>Footer</Footer>
             </Container>
         </div>
-    );
+    </div>
+  );
 }
