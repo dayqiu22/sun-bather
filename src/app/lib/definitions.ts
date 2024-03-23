@@ -1,6 +1,7 @@
 export type Preference = {
-    temp: number;
+    temp_max: number;
+    temp_min: number;
     sun: boolean;
     wind: boolean;
-    rain: number;
+    rain: boolean;
 };
