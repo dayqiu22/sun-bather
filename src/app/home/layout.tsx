@@ -7,6 +7,7 @@ import Footer from 'rsuite/Footer';
 import Sidebar from 'rsuite/Sidebar';
 import Navbar from 'rsuite/Navbar';
 import Nav from 'rsuite/Nav';
+import Link from 'next/link';
 
 // (Optional) Import component styles. If you are using Less, import the `index.less` file. 
 import 'rsuite/Container/styles/index.css';
@@ -23,8 +24,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <Header>
                 <Navbar appearance="inverse">
                 <Nav>
-                    <Nav.Item>Home</Nav.Item>
-                    <Nav.Item>Preferences</Nav.Item>
+                    <Nav.Item><Link key="home" href="/home">Home</Link></Nav.Item>
+                    <Nav.Item><Link key="preferences" href="/home/preferences">Preferences</Link></Nav.Item>
                 </Nav>
                 </Navbar>
             </Header>
