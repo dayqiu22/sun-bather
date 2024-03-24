@@ -6,10 +6,19 @@ require('dotenv').config();
 
 import React, { useState } from 'react';
 import axios from 'axios';
+import Reco from './reco';
+import { UserSettings } from '@/app/lib/definitions';
 
-const WeatherButton = () => {
-    const [city, setCity] = useState('');
-    const [weatherData, setWeatherData] = useState(null);
+interface UserProps {
+    user: UserSettings
+};
+
+const WeatherButton = ({ user }: UserProps) => {
+    const [city, setCity] = useState('Vancouver');
+    const [weatherData, setWeatherData] = useState<any>(null);
+    const [sun, setSun] = useState<string | null>(null);
+    const [wind, setWind] = useState<string | null>(null);
+    const [temp, setTemp] = useState<number | null>(null);
 
     const fetchWeatherData = async () => {
         const apiKey = process.env.NEXT_PUBLIC_API_KEY; 
@@ -28,22 +37,68 @@ const WeatherButton = () => {
             console.error('Failed to fetch weather data:', error);
             setWeatherData(null);
         }
+        console.log(weatherData);
+    };
+
+    const getBest = async () => {
+        if (!weatherData) {return;}
+        else {    
+            for (let i = 0; i < 3; i++) {
+                // still need to implement avaialbility matching
+                const temp = weatherData.list[i].main.temp;
+                let cloud = weatherData.list[i].clouds.all;
+                let wnspd = weatherData.list[i].wind.speed;
+                let rainfall = weatherData.list[i].weather[0].main;
+                console.log(temp);
+                console.log(cloud);
+                console.log(wnspd);
+                console.log(rainfall);
+                console.log(user.temp_min);
+                console.log(user.temp_max);
+                console.log(user.sun);
+                console.log(user.wind);
+                console.log(user.rain);
+                if (temp-273.15 >= user.temp_min && temp-273.15 <= user.temp_max) {
+                    if (user.sun == 'no' && cloud < 15) {
+                        continue;
+                    }
+                    if (user.wind == 'no' && wnspd > 3) {
+                        continue;
+                    }
+                    if (user.rain == 'no' && rainfall == 'heavy intensity rain') {
+                        continue;
+                    }
+                    cloud = (cloud < 25) ? 'Clear' : 'Cloudy';
+                    wnspd = (cloud > 3) ? 'Windy' : 'Calm';
+                    setSun(cloud);
+                    setWind(wnspd);
+                    setTemp(temp);
+                    console.log(sun);
+                    console.log(wind);
+                    console.log(temp);
+                }
+            }
+        }
     };
 
     return (
-        <div>
-            <input 
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
-                placeholder="Enter City"
-            />
-            <button onClick={fetchWeatherData}>Get Weather</button>
+        <>
+            <Reco sun={sun} wind={wind} temp={temp} user={user}/>
             <div>
-                {weatherData && (
-                    <pre>{JSON.stringify(weatherData, null, 2)}</pre>
-                )}
+                <input 
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
+                    placeholder="Enter City"
+                />
+                <button onClick={fetchWeatherData}>Get Weather</button>
+                <button onClick={getBest}>Refresh</button>
+                <div>
+                    {weatherData && (
+                        <pre>{JSON.stringify(weatherData, null, 2)}</pre>
+                    )}
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 

@@ -4,7 +4,7 @@ import Timepicker from "./timepicker";
 
 export default function Schedule() {
     const [availability, setAvailability] = useState(Array(24).fill(false));
-    const toggle = (hour) => {
+    const toggle = (hour:number) => {
         const updatedAvailability = availability.map((item, index) => index === hour ? !item : item);
         setAvailability(updatedAvailability);
         //update function??

@@ -3,24 +3,17 @@ import Schedule from "../ui/home/schedule";
 import { Grid, Col, Row } from 'rsuite';
 import Reco from "../ui/home/reco"
 import WeatherButton from "../ui/home/weatherButton";
+import { getPrefAndAvail } from "../lib/actions";
 
-export default function Page() {
-    const weatherDataPlaceholder = {
-        timeSpan: '9:00-11:00',
-        cloudCover: "Sunny",
-        temperature: '18C',
-        wind: 'Light'
-    }
-
-
-
+export default async function Page() {
+    const userPref = await getPrefAndAvail();
+    
     return (
         <>
             <div>Home Page</div>
             <Row className="show-grid">
                 <Col>
-                    <Reco weatherData={weatherDataPlaceholder}/>
-                    <WeatherButton/>
+                    <WeatherButton user={userPref}/>
                 </Col>
                 <Col md = {8} xsPush={8}>
                     {<Schedule/>}

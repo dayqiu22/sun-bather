@@ -2,7 +2,13 @@
 
 import React, {useState} from 'react';
 
-export default function Timepicker({ hour, onToggle, isAvailable }) {
+interface TimepickerProps {
+    hour: number;
+    onToggle: (hour: number) => void;
+    isAvailable: boolean;
+};
+
+export default function Timepicker({ hour, onToggle, isAvailable }: TimepickerProps) {
     return (
        <div 
        onClick={() => onToggle(hour)}
@@ -11,4 +17,4 @@ export default function Timepicker({ hour, onToggle, isAvailable }) {
         <h2>{`${hour}:00`}</h2>
        </div>
     );
-}
+};
