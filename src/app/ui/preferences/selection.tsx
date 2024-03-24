@@ -1,9 +1,9 @@
 import { Radio, RadioGroup } from 'rsuite';
-import { Input, InputGroup } from 'rsuite';
+import { Input, InputGroup, Col } from 'rsuite';
 
 export default function Selection() {
     return (
-        <div>
+        <Col>
             <div>
                 Ideal Temperature
                 <InputGroup>
@@ -35,6 +35,6 @@ export default function Selection() {
                     <Radio value="yes">Tolerable</Radio>
                 </RadioGroup>
             </div>
-        </div>
+        </Col>
     );
 }
