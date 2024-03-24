@@ -67,8 +67,10 @@ const WeatherButton = ({ user }: UserProps) => {
                     if (user[0].rain == 'no' && rainfall == 'heavy intensity rain') {
                         continue;
                     }
+                    console.log(cloud);
                     cloud = (cloud < 25) ? 'Clear' : 'Cloudy';
-                    wnspd = (cloud > 10) ? 'Windy' : 'Calm';
+                    console.log(cloud);
+                    wnspd = (wnspd > 10) ? 'Windy' : 'Calm';
                     temp = temp - 273.15;
                     setSun(cloud);
                     setWind(wnspd);
