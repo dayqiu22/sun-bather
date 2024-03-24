@@ -9,7 +9,6 @@ export default async function Page() {
     
     return (
         <>
-            <div>Home Page</div>
             <Row className="show-grid">
                 <Col>
                     <WeatherButton user={userPref}/>
