@@ -20,10 +20,12 @@ export default function Selection() {
     }
 
     return (
-        <Col className={'inputContainer'}>
-            <label htmlFor="temp">
-                Ideal Temperature
-            </label>
+        <Col className={'label'}>
+            <h2>
+                <label htmlFor="temp" className = 'label'>
+                    Ideal Temperature
+                </label>
+            </h2>
             <div id="temp">
                 <label style={{ fontSize: '20px' }}>From:</label>
                 <InputGroup style={{ marginBottom: '10px' }}>
@@ -52,9 +54,11 @@ export default function Selection() {
                 </InputGroup>
             </div>
             <br/>
-            <label htmlFor="sun">
+            <h2>
+                <label htmlFor="sun">
                 Sun Intensity
-            </label>
+                </label>
+            </h2>
             <div>
                 <RadioGroup id="sun" inline value={sun} onChange={(value, event) => setSun(value.toString())}>
                     <Radio value="no">Mild</Radio>
@@ -62,9 +66,11 @@ export default function Selection() {
                 </RadioGroup>
             </div>
             <br/>
-            <label htmlFor="wind">
+            <h2>
+                <label htmlFor="wind">
                 Windiness
-            </label>
+                </label>
+            </h2>
             <div>
                 <RadioGroup id="wind" inline value={wind} onChange={(value, event) => setWind(value.toString())}>
                     <Radio value="no">None</Radio>
@@ -72,9 +78,11 @@ export default function Selection() {
                 </RadioGroup>
             </div>
             <br/>
-            <label htmlFor="rain">
+            <h2>
+                <label htmlFor="rain">
                 Rain OK?
-            </label>
+                </label>
+            </h2>
             <div>
                 <RadioGroup id="rain" inline value={rain} onChange={(value, event) => setRain(value.toString())}>
                     <Radio value="no">Absolutely Not</Radio>
