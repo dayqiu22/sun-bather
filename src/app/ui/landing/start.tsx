@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Start() {
     return (
         <Link href = "./home">
-            <Button appearance="primary">Get Started</Button>
+            <Button className='landing-button'>Get Started</Button>
         </Link>
     );
 }

@@ -6,6 +6,15 @@
     
 }
 
+.landing-button {
+    background-color: #FBCDAC;
+    color: var(--main-font-color);
+}
+
+.landing-button:hover {
+    background-color: #E1B89A;
+    color: var(--main-font-color);
+}
 
 
 .available {
