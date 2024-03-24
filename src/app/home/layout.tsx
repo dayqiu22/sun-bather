@@ -24,15 +24,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <Header>
                 <Navbar className='navbar shadowed' appearance="inverse">
                 <Nav>
-                    <Nav.Item><Link key="home" href="/home">Home</Link></Nav.Item>
-                    <Nav.Item><Link key="preferences" href="/home/preferences">Preferences</Link></Nav.Item>
+                    <Nav.Item style={{ margin: '10px 0' }} href="/home">Home</Nav.Item>
+                    <Nav.Item style={{ margin: '10px 0' }} href="/home/preferences">Preferences</Nav.Item>
+                    <Nav.Item style={{ margin: '10px 0' }} href="/home/about">About</Nav.Item>
                 </Nav>
-                </Navbar>
+            </Navbar>
             </Header>
             <Content>
                 {children}
             </Content>
-            <Footer>Footer</Footer>
+            <Footer></Footer>
             </Container>
         </div>
     </div>
