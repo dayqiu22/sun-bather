@@ -1,36 +1,11 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sun Bathe and Touch Grass
+If you're reading this as a developer you should probably find some time to go outside. This project was designed with the goal of helping shut-ins find the optimal time with their preferred weather to go outside to develop a healthy body. This project taught us how to utilize the *Next.js* framework, *client and server components*, and how to integrate a *Vercel PostgresSQL* database.
 
-## Getting Started
+## Stack and Implementation
+This project was built using the *Next.js* framework using *Typescript* (better for debugging vs JS), *PostgresSQL* for storing user time and weather preferences, and UI components from *React Suite* for ease of integration. The weather preferences were chosen based on the most common considerations for people wanting to go outside.
 
-First, run the development server:
+## Usage
+This project is hosted at ***https://sun-bather.vercel.app/***. Click **"Get Started"** on the landing page to redirect to the home page. Go to the **"Preferences"** tab to enter your ideal outdoor weather (min/max temperature, intensity of sun, the presence of a breeze, and the presence of rain). Back at the **"Home"** tab, enter a ***CANADIAN CITY*** and click get weather then refresh to see if there is a recommended time to go outside based on your weather preferences!
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## What's Next
+We plan to incorporate the user's hourly availability for the day to determine whether or not a time can be recommended. We also want to implement a graphical representation of the weather conditions during a day.
