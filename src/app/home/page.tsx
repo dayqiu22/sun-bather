@@ -2,6 +2,7 @@ import Schedule from "../ui/home/schedule";
 
 import { Grid, Col, Row } from 'rsuite';
 import Reco from "../ui/home/reco"
+import WeatherButton from "../ui/home/weatherButton";
 
 export default function Page() {
     const weatherDataPlaceholder = {
@@ -19,6 +20,7 @@ export default function Page() {
             <Row className="show-grid">
                 <Col>
                     <Reco weatherData={weatherDataPlaceholder}/>
+                    <WeatherButton/>
                 </Col>
                 <Col md = {8} xsPush={8}>
                     {<Schedule/>}
