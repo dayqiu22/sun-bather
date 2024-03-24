@@ -1,7 +1,7 @@
 import Schedule from "../ui/home/schedule";
 
 import { Grid, Col } from 'rsuite';
-import Reco from "../ui/home/reco.tsx"
+import Reco from "../ui/home/reco"
 
 export default function Page() {
     const weatherDataPlaceholder = {
