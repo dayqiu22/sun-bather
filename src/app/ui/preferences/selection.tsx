@@ -1,16 +1,15 @@
-import { Radio, RadioGroup } from 'rsuite';
+import { Button, Radio, RadioGroup } from 'rsuite';
 import { Input, InputGroup, Col } from 'rsuite';
 import { Preference } from '@/app/lib/definitions';
 import React, { useState } from 'react';
 
 
 export default function Selection() {
-    const [tempMin, setTempMin] = React.useState(0);
-    const [tempMax, setTempMax] = React.useState(25);
+    const [tempMin, setTempMin] = React.useState<number>(0);
+    const [tempMax, setTempMax] = React.useState<number>(25);
     const [sun, setSun] = React.useState<string>("no");
-    const [wind, setWind] = React.useState("no");
-    const [rain, setRain] = React.useState("no");
-
+    const [wind, setWind] = React.useState<string>("no");
+    const [rain, setRain] = React.useState<string>("no");
 
     return (
         <Col>
@@ -37,28 +36,31 @@ export default function Selection() {
                     <InputGroup.Addon>&deg;C</InputGroup.Addon>
                 </InputGroup>
             </div>
-            
+            <br/>
+            Sun Intensity
             <div>
-                <RadioGroup id="sun" inline value={sun}>
-                    <label>Sun Intensity</label>
-                    <Radio value="no">Mild</Radio>
+                <RadioGroup id="sun" inline value={sun} onChange={(value, event) => setSun(value.toString())}>
+                    <Radio defaultChecked value="no">Mild</Radio>
                     <Radio value="yes">Strong</Radio>
                 </RadioGroup>
             </div>
+            <br/>
             Windiness
             <div>
-                <RadioGroup id="wind" inline defaultValue="no">
-                    <Radio value="no">None</Radio>
+                <RadioGroup id="wind" inline value={wind} onChange={(value, event) => setWind(value.toString())}>
+                    <Radio defaultChecked value="no">None</Radio>
                     <Radio value="yes">Breezy</Radio>
                 </RadioGroup>
             </div>
+            <br/>
             Rain OK?
             <div>
-                <RadioGroup id="rain" inline defaultValue="no">
-                    <Radio value="no">Absolutely Not</Radio>
+                <RadioGroup id="rain" inline value={rain} onChange={(value, event) => setRain(value.toString())}>
+                    <Radio defaultChecked value="no">Absolutely Not</Radio>
                     <Radio value="yes">Tolerable</Radio>
                 </RadioGroup>
             </div>
+            <br/>
         </Col>
     );
 }
