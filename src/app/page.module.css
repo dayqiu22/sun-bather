@@ -1,10 +1,13 @@
 
 .description {
     font-size: 60px;
-    font-family: Papyrus;
+    font-family: "Anton", monospace;
+    font-weight: 999;
+    color: #00aaf8;
+    
 }
 .main {
-    background-color: #FC9601;
+    /* background-color: #ffa25f; */
     height: 100vh;
     display: flex;
     justify-content: center;

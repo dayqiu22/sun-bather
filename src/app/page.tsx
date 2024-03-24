@@ -14,7 +14,7 @@ export default function Landing() {
         <Col xs={24}>
           <div className={styles.container}>
             <div className={styles.description}>
-              This be a Landing Page
+              GET READY TO TOUCH GRASS
             </div>
             <Start />
           </div>
