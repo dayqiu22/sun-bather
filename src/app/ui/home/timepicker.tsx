@@ -12,7 +12,7 @@ export default function Timepicker({ hour, onToggle, isAvailable }: TimepickerPr
     return (
        <div 
        onClick={() => onToggle(hour)}
-       className={`${isAvailable ? 'available' : 'unavailable'}`}
+       className={`${isAvailable ? 'available' : 'unavailable'} data`}
        >
         <h2>{`${hour}:00`}</h2>
        </div>

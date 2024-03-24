@@ -2,6 +2,9 @@
     --main-bg-color: #cbdedf;
     --main-font-color: #21323f;
     --secondary-bg-color: #FBCDAC;
+    --secondary-bg-color-hover: #E1B89A;
+    
+    
     background-color: var(--main-bg-color);
     color: var(--main-font-color);
 
@@ -12,9 +15,13 @@
     color: var(--main-font-color);
 }
 
-.landing-button:hover {
+.landing-button:hover{
     background-color: #E1B89A;
     color: var(--main-font-color);
+}
+
+.rs-navbar-item:hover {
+    background-color: var(--secondary-bg-color-hover);
 }
 
 
@@ -50,4 +57,24 @@
 
 h2 {
     margin: 0;
+    border-radius: 10%;
+}
+
+div {
+    border-radius: 1%/10%;
+
+}
+
+.shadowed {
+    box-shadow: 2px 2px 5px var(--main-font-color);
+}
+
+.navbar {
+    background-color: var(--secondary-bg-color);
+    border-radius: 1%/20%;
+    margin-bottom: 20px;
+}
+
+a {
+    color: var(--main-font-color);
 }

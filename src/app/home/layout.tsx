@@ -22,7 +22,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="show-fake-browser navbar-page">
             <Container>
             <Header>
-                <Navbar appearance="inverse">
+                <Navbar className='navbar shadowed' appearance="inverse">
                 <Nav>
                     <Nav.Item><Link key="home" href="/home">Home</Link></Nav.Item>
                     <Nav.Item><Link key="preferences" href="/home/preferences">Preferences</Link></Nav.Item>
