@@ -25,25 +25,31 @@ export default function Selection() {
                 Ideal Temperature
             </label>
             <div id="temp">
-                <Input 
-                    placeholder='Minimum Temperature'
-                    id="temp_min"
-                    type="number"
-                    value={tempMin}
-                    onChange={value => setTempMin(parseFloat(value))}
-                    style={{ fontSize: '14px' }} // Set input font size
-                />
-                <InputGroup.Addon>&deg;C</InputGroup.Addon>
-                <InputGroup.Addon>to</InputGroup.Addon>
-                <Input
-                    placeholder='Maximum Temperature'
-                    id="temp_max"
-                    type='number'
-                    value={tempMax}
-                    onChange={value => setTempMax(parseFloat(value))}
-                    style={{ fontSize: '14px' }} // Set input font size
-                />
-                <InputGroup.Addon>&deg;C</InputGroup.Addon>
+                <label style={{ fontSize: '20px' }}>From:</label>
+                <InputGroup style={{ marginBottom: '10px' }}>
+                    <Input 
+                        placeholder='Minimum Temperature'
+                        id="temp_min"
+                        type="number"
+                        value={tempMin}
+                        onChange={value => setTempMin(parseFloat(value))}
+                        style={{ fontSize: '14px' }} // Set input font size
+                    />
+                    <InputGroup.Addon>&deg;C</InputGroup.Addon>
+                </InputGroup>
+                
+                <label style={{ fontSize: '20px' }}>To:</label>
+                <InputGroup style={{ marginBottom: '10px' }}>
+                    <Input 
+                        placeholder='Maximum Temperature'
+                        id="temp_max"
+                        type='number'
+                        value={tempMax}
+                        onChange={value => setTempMax(parseFloat(value))}
+                        style={{ fontSize: '14px' }} // Set input font size
+                    />
+                    <InputGroup.Addon>&deg;C</InputGroup.Addon>
+                </InputGroup>
             </div>
             <br/>
             <label htmlFor="sun">
