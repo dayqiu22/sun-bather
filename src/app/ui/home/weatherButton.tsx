@@ -41,9 +41,19 @@ const WeatherButton = ({ user }: UserProps) => {
     };
 
     const getBest = async () => {
-        if (!weatherData) {return;}
+        if (!weatherData) {
+            setTime("");
+            setTemp(null);
+            setWind("");
+            setSun("");
+            ;}
         else {    
             for (let i = 0; i < 3; i++) {
+
+                setTime("");
+                setTemp(null);
+                setWind("");
+                setSun("");
                 // still need to implement avaialbility matching
                 let dateTime = weatherData.list[i].dt_txt;
                 let temp = weatherData.list[i].main.temp;
