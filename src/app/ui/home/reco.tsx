@@ -11,13 +11,13 @@ export default function Reco({ weatherData }) {
     return (
       <>
         <div>
-            <h2>{`Best Time: ${timeSpan}`}</h2>
+            <h2><span className="label">Best Time:</span> <span className="data">{timeSpan}</span></h2>
         </div>
         <div>
-            <h2>Conditions: </h2>
-            <h2>{cloudCover}</h2>
-            <h2>{`Temperature: ${temperature}`}</h2>
-            <h2>{`Wind: ${wind}`}</h2>
+            <h2><span className="label">Conditions:</span> <span className="data">{cloudCover}</span></h2>
+            <h2><span className="label">Temperature:</span> <span className="data">{temperature}</span></h2>
+            <h2><span className="label">Wind:</span> <span className="data">{wind}</span></h2>
+
         </div>
         <div>
             <h2>Enjoy!</h2>
