@@ -11,6 +11,7 @@ import { UserSettings } from '@/app/lib/definitions';
 
 interface UserProps {
     user: UserSettings
+    
 };
 
 const WeatherButton = ({ user }: UserProps) => {
