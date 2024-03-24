@@ -2,6 +2,9 @@ import styles from "./page.module.css";
 import Start from './ui/landing/start';
 import Title from './ui/landing/title';
 
+require('dotenv').config();
+
+
 export default function Landing() {
 
   return (
