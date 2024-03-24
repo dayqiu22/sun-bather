@@ -12,14 +12,12 @@ export default function Landing() {
     <Grid fluid>
       <Row className={styles.main}>
         <Col xs={24}>
-          <div className={styles.description}>
-            This be a Landing Page
+          <div className={styles.container}>
+            <div className={styles.description}>
+              This be a Landing Page
+            </div>
+            <Start />
           </div>
-        </Col>
-      </Row>
-      <Row>
-        <Col xs={24}>
-          <Start/>
         </Col>
       </Row>
     </Grid>
