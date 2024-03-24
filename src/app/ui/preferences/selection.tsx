@@ -1,36 +1,60 @@
 import { Radio, RadioGroup } from 'rsuite';
 import { Input, InputGroup, Col } from 'rsuite';
+import { Preference } from '@/app/lib/definitions';
+import React, { useState } from 'react';
+
 
 export default function Selection() {
+    const [tempMin, setTempMin] = React.useState(0);
+    const [tempMax, setTempMax] = React.useState(25);
+    const [sun, setSun] = React.useState<string>("no");
+    const [wind, setWind] = React.useState("no");
+    const [rain, setRain] = React.useState("no");
+
+
     return (
         <Col>
             <div>
                 Ideal Temperature
                 <InputGroup>
-                    <Input />
+                    <Input 
+                        placeholder='Minimum Temperature'
+                        id="temp_min"
+                        defaultValue={0}
+                        type="number"
+                        value={tempMin}
+                        onChange={value => setTempMin(parseFloat(value))}
+                    />
                     <InputGroup.Addon>&deg;C</InputGroup.Addon>
                     <InputGroup.Addon>to</InputGroup.Addon>
-                    <Input />
+                    <Input
+                        placeholder='Maximum Temperature'
+                        id="temp_max"
+                        defaultValue={25}
+                        type='number'
+                        value={tempMax}
+                        onChange={value => setTempMax(parseFloat(value))}/>
                     <InputGroup.Addon>&deg;C</InputGroup.Addon>
                 </InputGroup>
             </div>
-            Sun Intensity
+            
             <div>
-                <RadioGroup name="sun" inline defaultValue="no">
+                <RadioGroup id="sun" inline value={sun}>
+                    <label>Sun Intensity</label>
                     <Radio value="no">Mild</Radio>
                     <Radio value="yes">Strong</Radio>
                 </RadioGroup>
             </div>
             Windiness
             <div>
-                <RadioGroup name="wind" inline defaultValue="no">
+                <RadioGroup id="wind" inline defaultValue="no">
                     <Radio value="no">None</Radio>
                     <Radio value="yes">Breezy</Radio>
                 </RadioGroup>
             </div>
             Rain OK?
             <div>
-                <RadioGroup name="rain" inline defaultValue="no">
+                <RadioGroup id="rain" inline defaultValue="no">
                     <Radio value="no">Absolutely Not</Radio>
                     <Radio value="yes">Tolerable</Radio>
                 </RadioGroup>
