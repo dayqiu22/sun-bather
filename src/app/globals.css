@@ -1,9 +1,10 @@
 :root {
-    --main-bg-color: #B3E5FC;
-    --main-font-color: #36454F;
+    --main-bg-color: #cbdedf;
+    --main-font-color: #21323f;
     --secondary-bg-color: #FBCDAC;
     background-color: var(--main-bg-color);
-    
+    color: var(--main-font-color);
+
 }
 
 .landing-button {
@@ -19,6 +20,7 @@
 
 .available {
     background-color: var(--main-bg-color);
+
 }
 
 .unavailable {
@@ -44,4 +46,8 @@
     font-family: "Azeret Mono";
     font-size: 25px;
     margin-bottom: 30px;     
+}
+
+h2 {
+    margin: 0;
 }
