@@ -17,12 +17,15 @@ export default function Reco({ sun, wind, temp, user } : WeatherProps) {
         </div>
         <div>
             <h2><span className="label">Conditions:</span> <span className="data">{sun}</span></h2>
-            <h2><span className="label">Temperature:</span> <span className="data">{temp}</span></h2>
+            <h2><span className="label">Temperature (C):</span> <span className="data">{temp}</span></h2>
             <h2><span className="label">Wind:</span> <span className="data">{wind}</span></h2>
 
         </div>
         <div>
-            <h2>Enjoy!</h2>
+            <h2 style={{ marginBottom: '20px' }}>Enjoy!</h2>
+        </div>
+        <div>
+          Enter your city:
         </div>
       </>
     );
