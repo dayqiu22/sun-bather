@@ -19,6 +19,7 @@ const WeatherButton = ({ user }: UserProps) => {
     const [sun, setSun] = useState<string | null>(null);
     const [wind, setWind] = useState<string | null>(null);
     const [temp, setTemp] = useState<number | null>(null);
+    const [time, setTime] = useState<string | null>(null);
 
     const fetchWeatherData = async () => {
         const apiKey = process.env.NEXT_PUBLIC_API_KEY; 
@@ -44,10 +45,14 @@ const WeatherButton = ({ user }: UserProps) => {
         else {    
             for (let i = 0; i < 3; i++) {
                 // still need to implement avaialbility matching
+                let dateTime = weatherData.list[i].dt_txt;
                 let temp = weatherData.list[i].main.temp;
                 let cloud = weatherData.list[i].clouds.all;
                 let wnspd = weatherData.list[i].wind.speed;
                 let rainfall = weatherData.list[i].weather[0].main;
+                const date = new Date(dateTime.replace(" ", "T") + "Z");
+                const localTime = date.toLocaleTimeString();
+
                 console.log(temp);
                 console.log(cloud);
                 console.log(wnspd);
@@ -73,6 +78,7 @@ const WeatherButton = ({ user }: UserProps) => {
                     setSun(cloud);
                     setWind(wnspd);
                     setTemp(temp.toFixed(2));
+                    setTime(localTime);
                     console.log(sun);
                     console.log(wind);
                     console.log(temp);
@@ -83,7 +89,7 @@ const WeatherButton = ({ user }: UserProps) => {
 
     return (
         <>
-            <Reco sun={sun} wind={wind} temp={temp} user={user}/>
+            <Reco time = {time} sun={sun} wind={wind} temp={temp} user={user}/>
             <div>
                 <input 
                     value={city}
