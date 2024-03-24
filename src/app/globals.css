@@ -15,13 +15,28 @@
     color: var(--main-font-color);
 }
 
-.landing-button:hover{
+.landing-button:hover, button:hover{
     background-color: #E1B89A;
     color: var(--main-font-color);
 }
 
-.rs-navbar-item:hover {
+.rs-navbar-item {
+    background-color: var(--secondary-bg-color);
+    color: var(--main-font-color);
+}
+
+.rs-nav-item.rs-nav-item-active {
+    background-color: var(--secondary-bg-color);
+    color: var(--main-bg-color);
+}
+.rs-nav-default .rs-navbar-item:hover {
+    color: var(--main-font-color);
     background-color: var(--secondary-bg-color-hover);
+}
+
+.rs-navbar-item:hover {
+    background-color: var(--secondary-bg-color);
+    color: var(--main-font-color);
 }
 
 
@@ -60,11 +75,6 @@ h2 {
     border-radius: 10%;
 }
 
-div {
-    border-radius: 1%/10%;
-
-}
-
 .shadowed {
     box-shadow: 2px 2px 5px var(--main-font-color);
 }
@@ -76,5 +86,10 @@ div {
 }
 
 a {
+    color: var(--main-font-color);
+}
+
+button {
+    background-color: var(--secondary-bg-color);
     color: var(--main-font-color);
 }
