@@ -98,11 +98,6 @@ const WeatherButton = ({ user }: UserProps) => {
                 />
                 <button onClick={fetchWeatherData}>Get Weather</button>
                 <button onClick={getBest}>Refresh</button>
-                <div>
-                    {weatherData && (
-                        <pre>{JSON.stringify(weatherData, null, 2)}</pre>
-                    )}
-                </div>
             </div>
         </>
     );
