@@ -23,17 +23,14 @@
 }
 
 .inputContainer {
-    font-family: "Helvetica";
+    font-family: "Azeret Mono";
     font-size: 30px;
+    
 
     
 }
 .pref {
-    font-family: "Helvetica";
+    font-family: "Azeret Mono";
     font-size: 25px;
-    margin-bottom: 30px; 
-    
-
-
-    
+    margin-bottom: 30px;     
 }

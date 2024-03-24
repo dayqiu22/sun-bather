@@ -2,7 +2,6 @@ import { Radio, RadioGroup } from 'rsuite';
 import { Input, InputGroup, Col } from 'rsuite';
 import { Preference } from '@/app/lib/definitions';
 import React, { useState } from 'react';
-import styles from "./page.module.css";
 
 export default function Selection() {
     const [tempMin, setTempMin] = useState(0);
@@ -11,11 +10,28 @@ export default function Selection() {
     const [wind, setWind] = useState("no");
     const [rain, setRain] = useState("no");
 
+    const labelStyle = {
+        marginRight: '10px', // Add margin between label and input group
+        fontSize: '18px',   // Set label font size
+        fontWeight: 'bold', // Optionally set font weight
+    };
+
+    const inputGroupStyle = {
+        display: 'flex',
+        alignItems: 'center',
+    };
+
+    const rowStyle = {
+        display: 'flex',
+        alignItems: 'center',
+        marginBottom: '10px', // Add margin between rows
+    };
+
     return (
         <Col className={'inputContainer'}>
-            <div>
-                <label>Ideal Temperature</label>
-                <InputGroup className = {'pref'}>
+            <div style={rowStyle}>
+                <label style={labelStyle}>Ideal Temperature</label>
+                <div style={inputGroupStyle}>
                     <Input 
                         placeholder='Minimum Temperature'
                         id="temp_min"
@@ -23,7 +39,7 @@ export default function Selection() {
                         type="number"
                         value={tempMin}
                         onChange={value => setTempMin(parseFloat(value))}
-                        //className={'pref'}
+                        style={{ fontSize: '14px' }} // Set input font size
                     />
                     <InputGroup.Addon>&deg;C</InputGroup.Addon>
                     <InputGroup.Addon>to</InputGroup.Addon>
@@ -34,33 +50,33 @@ export default function Selection() {
                         type='number'
                         value={tempMax}
                         onChange={value => setTempMax(parseFloat(value))}
-                        //className={'pref'}
+                        style={{ fontSize: '14px' }} // Set input font size
                     />
                     <InputGroup.Addon>&deg;C</InputGroup.Addon>
-                </InputGroup>
+                </div>
             </div>
             
-            <div>
-                <label>Sun Intensity</label>
+            <div style={rowStyle}>
+                <label style={labelStyle}>Sun Intensity</label>
                 <RadioGroup id="sun" inline value={sun}>
-                    <Radio value="no" className={'pref'}>Mild</Radio>
-                    <Radio value="yes" className={'pref'}>Strong</Radio>
+                    <Radio value="no">Mild</Radio>
+                    <Radio value="yes">Strong</Radio>
                 </RadioGroup>
             </div>
             
-            <div>
-                <label>Windiness</label>
+            <div style={rowStyle}>
+                <label style={labelStyle}>Windiness</label>
                 <RadioGroup id="wind" inline defaultValue="no">
-                    <Radio value="no" className={'pref'}>None</Radio>
-                    <Radio value="yes" className={'pref'}>Breezy</Radio>
+                    <Radio value="no">None</Radio>
+                    <Radio value="yes">Breezy</Radio>
                 </RadioGroup>
             </div>
             
-            <div>
-                <label>Rain OK?</label>
+            <div style={rowStyle}>
+                <label style={labelStyle}>Rain OK?</label>
                 <RadioGroup id="rain" inline defaultValue="no">
-                    <Radio value="no" className={'pref'}>Absolutely Not</Radio>
-                    <Radio value="yes" className={'pref'}>Tolerable</Radio>
+                    <Radio value="no">Absolutely Not</Radio>
+                    <Radio value="yes">Tolerable</Radio>
                 </RadioGroup>
             </div>
         </Col>
