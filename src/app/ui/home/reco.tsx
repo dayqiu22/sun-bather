@@ -1,6 +1,12 @@
+require('dotenv').config();
+
+
+
 export default function Reco({ weatherData }) {
     // Destructure the properties from weatherData for easier access
     const { timeSpan, cloudCover, temperature, wind } = weatherData;
+
+    const apiKey = process.env.API_KEY;
   
     return (
       <>
