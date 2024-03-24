@@ -3,7 +3,7 @@ import Selection from "../../ui/preferences/selection";
 
 export default function Box() {
     return (
-        <Panel header="Preferences" bordered>
+        <Panel bordered>
             <Selection />
         </Panel>
     );
