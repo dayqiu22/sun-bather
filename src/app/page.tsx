@@ -8,8 +8,8 @@ export default function Landing() {
     <main className={styles.main}>
       <div className={styles.description}>
         Landing Page
-        <Start/>
         <Title/>
+        <Start/>
       </div>
     </main>
   );

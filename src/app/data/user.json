@@ -1,0 +1,10 @@
+{
+    "preferences": {
+        "temp_max": "20",
+        "temp_min": "0",
+        "sun": "no",
+        "wind": "no",
+        "rain": "no"
+    },
+    "availability": ["no","no","no","no","no","no","no","no","no","no","no","no","no","no","no","no","no","no","no","no","no","no","no","no"]
+}
