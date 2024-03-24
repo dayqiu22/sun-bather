@@ -14,7 +14,11 @@ export default function Landing() {
         <Col xs={24}>
           <div className={styles.container}>
             <div className={styles.description}>
+<<<<<<< HEAD
+              GET READY TO TOUCH GRASS
+=======
               Touch Grass
+>>>>>>> 8276fec4724c21930cb9e4d210438d89b7209f21
             </div>
             <Start />
           </div>
