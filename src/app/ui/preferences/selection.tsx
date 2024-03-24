@@ -2,21 +2,20 @@ import { Radio, RadioGroup } from 'rsuite';
 import { Input, InputGroup, Col } from 'rsuite';
 import { Preference } from '@/app/lib/definitions';
 import React, { useState } from 'react';
-
+import styles from "./page.module.css";
 
 export default function Selection() {
-    const [tempMin, setTempMin] = React.useState(0);
-    const [tempMax, setTempMax] = React.useState(25);
-    const [sun, setSun] = React.useState<string>("no");
-    const [wind, setWind] = React.useState("no");
-    const [rain, setRain] = React.useState("no");
-
+    const [tempMin, setTempMin] = useState(0);
+    const [tempMax, setTempMax] = useState(25);
+    const [sun, setSun] = useState<string>("no");
+    const [wind, setWind] = useState("no");
+    const [rain, setRain] = useState("no");
 
     return (
-        <Col>
+        <Col className={'inputContainer'}>
             <div>
-                Ideal Temperature
-                <InputGroup>
+                <label>Ideal Temperature</label>
+                <InputGroup className = {'pref'}>
                     <Input 
                         placeholder='Minimum Temperature'
                         id="temp_min"
@@ -24,6 +23,7 @@ export default function Selection() {
                         type="number"
                         value={tempMin}
                         onChange={value => setTempMin(parseFloat(value))}
+                        //className={'pref'}
                     />
                     <InputGroup.Addon>&deg;C</InputGroup.Addon>
                     <InputGroup.Addon>to</InputGroup.Addon>
@@ -33,30 +33,34 @@ export default function Selection() {
                         defaultValue={25}
                         type='number'
                         value={tempMax}
-                        onChange={value => setTempMax(parseFloat(value))}/>
+                        onChange={value => setTempMax(parseFloat(value))}
+                        //className={'pref'}
+                    />
                     <InputGroup.Addon>&deg;C</InputGroup.Addon>
                 </InputGroup>
             </div>
             
             <div>
+                <label>Sun Intensity</label>
                 <RadioGroup id="sun" inline value={sun}>
-                    <label>Sun Intensity</label>
-                    <Radio value="no">Mild</Radio>
-                    <Radio value="yes">Strong</Radio>
+                    <Radio value="no" className={'pref'}>Mild</Radio>
+                    <Radio value="yes" className={'pref'}>Strong</Radio>
                 </RadioGroup>
             </div>
-            Windiness
+            
             <div>
+                <label>Windiness</label>
                 <RadioGroup id="wind" inline defaultValue="no">
-                    <Radio value="no">None</Radio>
-                    <Radio value="yes">Breezy</Radio>
+                    <Radio value="no" className={'pref'}>None</Radio>
+                    <Radio value="yes" className={'pref'}>Breezy</Radio>
                 </RadioGroup>
             </div>
-            Rain OK?
+            
             <div>
+                <label>Rain OK?</label>
                 <RadioGroup id="rain" inline defaultValue="no">
-                    <Radio value="no">Absolutely Not</Radio>
-                    <Radio value="yes">Tolerable</Radio>
+                    <Radio value="no" className={'pref'}>Absolutely Not</Radio>
+                    <Radio value="yes" className={'pref'}>Tolerable</Radio>
                 </RadioGroup>
             </div>
         </Col>

@@ -21,3 +21,19 @@
 .data {
     font-family: "Papyrus";
 }
+
+.inputContainer {
+    font-family: "Helvetica";
+    font-size: 30px;
+
+    
+}
+.pref {
+    font-family: "Helvetica";
+    font-size: 25px;
+    margin-bottom: 30px; 
+    
+
+
+    
+}
