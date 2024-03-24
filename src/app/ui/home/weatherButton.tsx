@@ -53,19 +53,19 @@ const WeatherButton = ({ user }: UserProps) => {
                 console.log(cloud);
                 console.log(wnspd);
                 console.log(rainfall);
-                console.log(user.temp_min);
-                console.log(user.temp_max);
-                console.log(user.sun);
-                console.log(user.wind);
-                console.log(user.rain);
-                if (temp-273.15 >= user.temp_min && temp-273.15 <= user.temp_max) {
-                    if (user.sun == 'no' && cloud < 15) {
+                console.log(user[0].temp_min);
+                console.log(user[0].temp_max);
+                console.log(user[0].sun);
+                console.log(user[0].wind);
+                console.log(user[0].rain);
+                if (temp-273.15 >= user[0].temp_min && temp-273.15 <= user[0].temp_max) {
+                    if (user[0].sun == 'no' && cloud < 15) {
                         continue;
                     }
-                    if (user.wind == 'no' && wnspd > 3) {
+                    if (user[0].wind == 'no' && wnspd > 3) {
                         continue;
                     }
-                    if (user.rain == 'no' && rainfall == 'heavy intensity rain') {
+                    if (user[0].rain == 'no' && rainfall == 'heavy intensity rain') {
                         continue;
                     }
                     cloud = (cloud < 25) ? 'Clear' : 'Cloudy';

@@ -6,7 +6,7 @@ import WeatherButton from "../ui/home/weatherButton";
 import { getPrefAndAvail } from "../lib/actions";
 
 export default async function Page() {
-    const userPref = await getPrefAndAvail();
+    const userPref: any = await getPrefAndAvail();
     
     return (
         <>

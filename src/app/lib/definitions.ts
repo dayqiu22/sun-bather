@@ -6,14 +6,7 @@ export type Preferences = {
     rain: string;
 };
 
-export type UserSettings = {
-    temp_min: number;
-    temp_max: number;
-    sun: string;
-    wind: string;
-    rain: string;
-    availability: any;
-};
+export type UserSettings = { temp_min: any; temp_max: any; sun: any; wind: any; rain: any; availability: any; }[]
 
 export type WeatherData = {
     timeSpan: string,

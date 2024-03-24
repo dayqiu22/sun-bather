@@ -37,22 +37,18 @@ export async function getPrefAndAvail() {
     try {
         const dataPromise = sql`SELECT * FROM users`;
         const data = await dataPromise;
+
+        const rows = data.rows;
+        const parsedData = rows.map(row => ({
+            temp_min: parseFloat(row.temp_min),
+            temp_max: parseFloat(row.temp_max),
+            sun: row.sun,
+            wind: row.wind,
+            rain: row.rain,
+            availability: row.availability
+        }));
     
-        const temp_min = data.rows[0][1];
-        const temp_max = data.rows[0][2];
-        const sun = data.rows[0][3];
-        const wind = data.rows[0][4];
-        const rain = data.rows[0][5];
-        const availability = data.rows[0][6];
-    
-        return {
-            temp_min,
-            temp_max,
-            sun,
-            wind,
-            rain,
-            availability
-        };
+        return parsedData;
     } catch (error) {
         console.error('Database Error:', error);
         throw new Error('Failed to fetch data.');
