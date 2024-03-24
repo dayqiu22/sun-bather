@@ -40,8 +40,8 @@ export async function getPrefAndAvail() {
 
         const rows = data.rows;
         const parsedData = rows.map(row => ({
-            temp_min: parseFloat(row.temp_min),
-            temp_max: parseFloat(row.temp_max),
+            temp_min: parseFloat(row.tempmin),
+            temp_max: parseFloat(row.tempmax),
             sun: row.sun,
             wind: row.wind,
             rain: row.rain,

@@ -1,7 +1,6 @@
 import Schedule from "../ui/home/schedule";
 
 import { Grid, Col, Row } from 'rsuite';
-import Reco from "../ui/home/reco"
 import WeatherButton from "../ui/home/weatherButton";
 import { getPrefAndAvail } from "../lib/actions";
 

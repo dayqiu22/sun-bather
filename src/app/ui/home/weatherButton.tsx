@@ -37,7 +37,6 @@ const WeatherButton = ({ user }: UserProps) => {
             console.error('Failed to fetch weather data:', error);
             setWeatherData(null);
         }
-        console.log(weatherData);
     };
 
     const getBest = async () => {
@@ -45,7 +44,7 @@ const WeatherButton = ({ user }: UserProps) => {
         else {    
             for (let i = 0; i < 3; i++) {
                 // still need to implement avaialbility matching
-                const temp = weatherData.list[i].main.temp;
+                let temp = weatherData.list[i].main.temp;
                 let cloud = weatherData.list[i].clouds.all;
                 let wnspd = weatherData.list[i].wind.speed;
                 let rainfall = weatherData.list[i].weather[0].main;
@@ -59,20 +58,21 @@ const WeatherButton = ({ user }: UserProps) => {
                 console.log(user[0].wind);
                 console.log(user[0].rain);
                 if (temp-273.15 >= user[0].temp_min && temp-273.15 <= user[0].temp_max) {
-                    if (user[0].sun == 'no' && cloud < 15) {
+                    if (user[0].sun == 'no' && cloud < 25) {
                         continue;
                     }
-                    if (user[0].wind == 'no' && wnspd > 3) {
+                    if (user[0].wind == 'no' && wnspd > 10) {
                         continue;
                     }
                     if (user[0].rain == 'no' && rainfall == 'heavy intensity rain') {
                         continue;
                     }
                     cloud = (cloud < 25) ? 'Clear' : 'Cloudy';
-                    wnspd = (cloud > 3) ? 'Windy' : 'Calm';
+                    wnspd = (cloud > 10) ? 'Windy' : 'Calm';
+                    temp = temp - 273.15;
                     setSun(cloud);
                     setWind(wnspd);
-                    setTemp(temp);
+                    setTemp(temp.toFixed(2));
                     console.log(sun);
                     console.log(wind);
                     console.log(temp);
