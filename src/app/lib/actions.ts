@@ -26,7 +26,7 @@ export async function savePreferences(formData: Preferences) {
     await sql`
     UPDATE users
     SET tempMin = ${rawData.temp_min}, tempMax = ${rawData.temp_max}, sun = ${rawData.sun}, wind = ${rawData.wind}, rain = ${rawData.rain}
-    WHERE id = ${process.env.POSTGRES_USER_ID}
+    WHERE id = ${process.env.NEXT_PUBLIC_POSTGRES_USER_ID}
     `;
     
     revalidatePath('/home');

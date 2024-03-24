@@ -22,7 +22,7 @@ const WeatherButton = ({ user }: UserProps) => {
     const [time, setTime] = useState<string | null>(null);
 
     const fetchWeatherData = async () => {
-        const apiKey = process.env.NEXT_PUBLIC_API_KEY; 
+        const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
         try {
             // First, get the latitude and longitude for the city
