@@ -26,7 +26,10 @@ export default function Reco({ time, sun, wind, temp, user } : WeatherProps) {
             <h2 style={{ marginBottom: '20px' }}>Enjoy!</h2>
         </div>
         <div>
+          <h2>
           Enter your city:
+          </h2>
+          
         </div>
       </>
     );
