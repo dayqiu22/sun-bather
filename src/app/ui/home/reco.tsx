@@ -29,7 +29,6 @@ export default function Reco({ time, sun, wind, temp, user } : WeatherProps) {
           <h2>
           Enter your city:
           </h2>
-          
         </div>
       </>
     );

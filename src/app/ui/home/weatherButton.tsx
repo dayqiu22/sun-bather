@@ -64,15 +64,6 @@ const WeatherButton = ({ user }: UserProps) => {
                 const date = new Date(dateTime.replace(" ", "T") + "Z");
                 const localTime = date.toLocaleTimeString();
 
-                console.log(temp);
-                console.log(cloud);
-                console.log(wnspd);
-                console.log(rainfall);
-                console.log(user[0].temp_min);
-                console.log(user[0].temp_max);
-                console.log(user[0].sun);
-                console.log(user[0].wind);
-                console.log(user[0].rain);
                 if (temp-273.15 >= user[0].temp_min && temp-273.15 <= user[0].temp_max) {
                     if (user[0].sun == 'no' && cloud < 25) {
                         continue;
@@ -90,9 +81,6 @@ const WeatherButton = ({ user }: UserProps) => {
                     setWind(wnspd);
                     setTemp(temp.toFixed(2));
                     setTime(localTime);
-                    console.log(sun);
-                    console.log(wind);
-                    console.log(temp);
                 }
             }
         }

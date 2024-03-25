@@ -15,18 +15,8 @@ export default async function Page() {
                 </Col>
                 <Col md = {8} xsPush={8}>
                     {<Schedule/>}
-                    {/* xs={6} xsPush={12} `right` */}
                 </Col>
             </Row>
-            
-{/* 
-            <Grid fluid>
-                <Col md={8} xsOffset={16}>
-                    
-                </Col>
-            </Grid> */}
-
-            
         </>
     );
 }

@@ -56,7 +56,7 @@ export default function Selection() {
             <br/>
             <h2>
                 <label htmlFor="sun">
-                Sun Intensity
+                    Sun Intensity
                 </label>
             </h2>
             <div>
@@ -68,7 +68,7 @@ export default function Selection() {
             <br/>
             <h2>
                 <label htmlFor="wind">
-                Windiness
+                    Windiness
                 </label>
             </h2>
             <div>
@@ -80,7 +80,7 @@ export default function Selection() {
             <br/>
             <h2>
                 <label htmlFor="rain">
-                Rain OK?
+                    Rain OK?
                 </label>
             </h2>
             <div>
